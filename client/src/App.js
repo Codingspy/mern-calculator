@@ -21,7 +21,7 @@ function App() {
 
   const calculate = async (expression) => {
     try {
-      const res = await fetch('https://mern-calculator-c4ys.onrender.com', {
+      const res = await fetch('https://mern-calculator-c4ys.onrender.com/calculate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ expression }),
