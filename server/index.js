@@ -5,11 +5,11 @@ const cors = require('cors');
 const { evaluate } = require('mathjs');
 
 const app = express();
-const corsOptions = {
-  origin: 'https://mern-calculator-o6f1l0guv-pvss-projects-d13e94f6.vercel.app'
-};
+app.use(cors({
+  origin: '*', // Or set it to 'https://mern-calculator.vercel.app'
+  methods: ['GET', 'POST'],
+}));
 
-app.use(cors(corsOptions));
 
 app.use(express.json());
 
