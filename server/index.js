@@ -5,10 +5,11 @@ const cors = require('cors');
 const { evaluate } = require('mathjs');
 
 const app = express();
-app.use(cors({
-  origin: 'https://mern-calculator-pvss-projects-d13e94f6.vercel.app',
-  methods: ['GET', 'POST'],
-}));
+const corsOptions = {
+  origin: 'https://mern-calculator-o6f1l0guv-pvss-projects-d13e94f6.vercel.app'
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
   res.send('Server is running!');
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
